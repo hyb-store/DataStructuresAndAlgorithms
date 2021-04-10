@@ -2,6 +2,9 @@ package queue;
 
 import java.util.Scanner;
 
+/**
+ * 队列
+ */
 public class ArrayQueueDemo {
     public static void main(String[] args) {
         //测试一把

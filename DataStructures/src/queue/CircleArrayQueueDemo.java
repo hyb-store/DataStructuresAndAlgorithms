@@ -2,6 +2,9 @@ package queue;
 
 import java.util.Scanner;
 
+/**
+ * 环形队列
+ */
 public class CircleArrayQueueDemo {
 
     public static void main(String[] args) {
