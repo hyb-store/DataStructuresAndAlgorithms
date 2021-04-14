@@ -1,5 +1,7 @@
 package linkedlist;
 
+import java.util.Stack;
+
 /***
  * 单向链表
  */
@@ -43,9 +45,46 @@ public class SingleLinkedListDemo {
 //        HeroNode res = findLastIndexNode(singleLinkedList.getHead(), 3);//res=HeroNode{no=2, name='卢俊义', nickname='玉麒麟'}
 //        System.out.println("res=" + res);
 
-        singleLinkedList.list();
+        //反转单链表
+//        singleLinkedList.list();
+//        System.out.println("反转单链表~~");
+//		reversetList(singleLinkedList.getHead());
+
+        System.out.println("测试逆序打印单链表, 没有改变链表的结构~~");
+        reversePrint(singleLinkedList.getHead());
+
+       // singleLinkedList.list();
+
 
     }
+    //可以利用栈这个数据结构，将各个节点压入到栈中，然后利用栈的先进后出的特点，就实现了逆序打印的效果
+    public static void reversePrint(HeroNode head) {
+        if(head.next == null) {
+            return;//空链表，不能打印
+        }
+        //创建要给一个栈，将各个节点压入栈
+        Stack<HeroNode> stack = new Stack<HeroNode>();
+        HeroNode cur = head.next;
+        //将链表的所有节点压入栈
+        while(cur != null) {
+            stack.push(cur);
+            cur = cur.next; //cur后移，这样就可以压入下一个节点
+        }
+        //将栈中的节点进行打印,pop 出栈
+        while (stack.size() > 0) {
+            System.out.println(stack.pop()); //stack的特点是先进后出
+        }
+    }
+
+
+
+//    public static void res(HeroNode temp) {//递归逆序遍历
+//        if(temp == null ){
+//            return;
+//        }
+//        res(temp.next);
+//        System.out.println(temp.nickname+":"+temp.name+":"+temp.no);
+//    }
 
     //查找单链表中的倒数第k个结点
     //1. 编写一个方法，接收head节点，同时接收一个index
@@ -90,6 +129,29 @@ public class SingleLinkedListDemo {
             cur = cur.next; //遍历
         }
         return length;
+    }
+
+    //将单链表反转
+    public static void reversetList(HeroNode head) {
+        //如果当前链表为空，或者只有一个节点，无需反转，直接返回
+        if(head.next == null || head.next.next == null) {
+            return ;
+        }
+
+        //定义一个辅助的指针(变量)，帮助我们遍历原来的链表
+        HeroNode cur = head.next;
+        HeroNode next = null;// 指向当前节点[cur]的下一个节点
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        //遍历原来的链表，每遍历一个节点，就将其取出，并放在新的链表reverseHead 的最前端
+        //动脑筋
+        while(cur != null) {
+            next = cur.next;//先暂时保存当前节点的下一个节点，因为后面需要使用
+            cur.next = reverseHead.next;//将cur的下一个节点指向新的链表的最前端
+            reverseHead.next = cur; //将cur 连接到新的链表上
+            cur = next;//让cur后移
+        }
+        //将head.next 指向 reverseHead.next , 实现单链表的反转
+        head.next = reverseHead.next;
     }
 }
 
