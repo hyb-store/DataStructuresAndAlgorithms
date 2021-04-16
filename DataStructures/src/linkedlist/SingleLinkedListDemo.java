@@ -27,6 +27,8 @@ public class SingleLinkedListDemo {
         singleLinkedList.addByOrder(hero2);
         singleLinkedList.addByOrder(hero3);
 
+        singleLinkedList.addByOrder(new HeroNode(5,"123","131"));
+
         /**测试修改节点的代码*/
 //        HeroNode newHeroNode = new HeroNode(2, "小卢", "玉麒麟~~");
 //        singleLinkedList.update(newHeroNode);
