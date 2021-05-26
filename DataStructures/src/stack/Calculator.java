@@ -67,7 +67,6 @@ public class Calculator {
                         numStack.push(Integer.parseInt(keepNum));
                         //重要的!!!!!!, keepNum清空
                         keepNum = "";
-
                     }
                 }
             }
