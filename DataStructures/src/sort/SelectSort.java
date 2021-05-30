@@ -19,9 +19,6 @@ public class SelectSort {
             arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
         }
 
-        System.out.println("排序前");
-        //System.out.println(Arrays.toString(arr));
-
         Date data1 = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String date1Str = simpleDateFormat.format(data1);
