@@ -11,10 +11,22 @@ public class BinarySortTreeDemo {
 
         //中序遍历二叉排序树
         System.out.println("中序遍历二叉排序树~");
-        binarySortTree.infixOrder();
+        binarySortTree.infixOrder(); // 1, 3, 5, 7, 9, 10, 12
 
         //删除二叉排序树节点
+        binarySortTree.delNode(12);
+
+        binarySortTree.delNode(5);
+        binarySortTree.delNode(10);
+        binarySortTree.delNode(2);
         binarySortTree.delNode(3);
+
+        binarySortTree.delNode(9);
+        binarySortTree.delNode(1);
+        binarySortTree.delNode(7);
+
+        System.out.println("root=" + binarySortTree.getRoot());
+
         System.out.println("删除后中序遍历：");
         binarySortTree.infixOrder();
 
