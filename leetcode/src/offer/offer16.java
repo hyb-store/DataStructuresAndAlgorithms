@@ -14,25 +14,32 @@ package offer;
 示例 3：
 输入：x = 2.00000, n = -2
 输出：0.25000
-解释：2-2 = 1/22 = 1/4 = 0.25
+解释：2^-2 = 1/2^2 = 1/4 = 0.25
  */
 public class offer16 {
+    /**
+     * 核心：2^18 = 2^(10010) = 2^(10000)*2^(10) = 2^16 * 2^2 = 2^18
+     */
     public static double myPow(double x, int n) {
-        if (n == 0) {
-            return 0;
+        long b = n;
+        if (b < 0) {
+            x = 1 / x;
+            b = - b;
         }
-        if (n == 1) {
-            return x;
-        }
-        double result = x;
-        for (int i = 2; i <= n; i++) {
-            result = result * x;
+
+        double result = 1;
+        while (b != 0) {
+            if (b % 2 != 0) {
+                result = result * x;
+            }
+            x = x * x;
+            b = b >> 1;
         }
         return result;
 
     }
 
     public static void main(String[] args) {
-        System.out.println(myPow(4, 2));
+        System.out.println(myPow(2, -2));
     }
 }

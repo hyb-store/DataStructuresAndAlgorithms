@@ -16,7 +16,7 @@ public class offer07 {
 
     private static Map<Integer, Integer> indexMap;
 
-    public static TreeNode build(int[] preorder, int[] inorder, int preLeft, int preRight, int inLeft, int inRight) {
+    public static TreeNode1 build(int[] preorder, int[] inorder, int preLeft, int preRight, int inLeft, int inRight) {
         if (preLeft > preRight) {
             return null;
         }
@@ -24,7 +24,7 @@ public class offer07 {
         int leftCount = inRoot - inLeft;//左子树的数量
 
         //创建根节点
-        TreeNode node = new TreeNode(preorder[preLeft]);
+        TreeNode1 node = new TreeNode1(preorder[preLeft]);
 
         // 先序遍历中[从 左边界+1 开始的 leftCount]个元素就对应了中序遍历中[从 左边界 开始到 根节点定位-1]的元素
         node.left = build(preorder,inorder,preLeft+1,preLeft+leftCount,inLeft,inRoot-1);
@@ -35,7 +35,7 @@ public class offer07 {
 
     }
 
-    public static TreeNode buildTree(int[] preorder, int[] inorder) {
+    public static TreeNode1 buildTree(int[] preorder, int[] inorder) {
         int preorderLength = inorder.length;
         indexMap = new HashMap<Integer, Integer>();
         for (int i = 0; i < preorderLength; i++) {
@@ -47,25 +47,25 @@ public class offer07 {
     public static void main(String[] args) {
         int[] preOrder = new int[]{3, 9, 20, 15, 7};
         int[] infixOrder = new int[]{9, 3, 15, 20, 7};
-        TreeNode treeNode = buildTree(preOrder, infixOrder);
-        System.out.println(treeNode);
+        TreeNode1 treeNode1 = buildTree(preOrder, infixOrder);
+        System.out.println(treeNode1);
 
     }
 }
 
 //Definition for a binary tree node.
-class TreeNode {
+class TreeNode1 {
     int val;
-    TreeNode left;
-    TreeNode right;
+    TreeNode1 left;
+    TreeNode1 right;
 
-    TreeNode(int x) {
+    TreeNode1(int x) {
         val = x;
     }
 
     @Override
     public String toString() {
-        return "TreeNode{" +
+        return "TreeNode1{" +
                 "val=" + val +
                 ", left=" + left +
                 ", right=" + right +

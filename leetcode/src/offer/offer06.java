@@ -11,14 +11,14 @@ import java.util.Arrays;
 import java.util.Stack;
 
 //Definition for singly-linked list.
-class ListNode {
+class ListNode1 {
     int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
+    ListNode1 next;
+    ListNode1(int x) { val = x; }
 }
 public class offer06 {
-    public static int[] reversePrint(ListNode head) {
-        ListNode temp = head;
+    public static int[] reversePrint(ListNode1 head) {
+        ListNode1 temp = head;
         Stack<Integer> stack = new Stack<Integer>();
         while(temp != null) {
             stack.push(temp.val);
@@ -31,9 +31,9 @@ public class offer06 {
         return arr;
     }
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(3);
-        ListNode node3 = new ListNode(2);
+        ListNode1 node1 = new ListNode1(1);
+        ListNode1 node2 = new ListNode1(3);
+        ListNode1 node3 = new ListNode1(2);
 
         node1.next = node2;
         node2.next = node3;
