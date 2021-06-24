@@ -16,43 +16,43 @@ package offer;
 9   6 3   1
  */
 // Definition for a binary tree node.
-class TreeNode {
+class TreeNode2 {
     int val;
-    TreeNode left;
-    TreeNode right;
+    TreeNode2 left;
+    TreeNode2 right;
 
-    TreeNode(int x) {
+    TreeNode2(int x) {
         val = x;
     }
 }
 public class offer27 {
-    public static TreeNode mirrorTree(TreeNode root) {
+    public static TreeNode2 mirrorTree(TreeNode2 root) {
         if (root == null ){
             return null;
         }
-        TreeNode left = mirrorTree(root.left);
-        TreeNode right = mirrorTree(root.right);
+        TreeNode2 left = mirrorTree(root.left);
+        TreeNode2 right = mirrorTree(root.right);
         root.left = right;
         root.right = left;
         return root;
     }
     public static void main(String[] args) {
-        TreeNode treeNode1 = new TreeNode(4);
-        TreeNode treeNode2 = new TreeNode(2);
-        TreeNode treeNode3 = new TreeNode(7);
-        TreeNode treeNode4 = new TreeNode(1);
-        TreeNode treeNode5 = new TreeNode(3);
-        TreeNode treeNode6 = new TreeNode(6);
-        TreeNode treeNode7 = new TreeNode(9);
+        TreeNode2 treNode1 = new TreeNode2(4);
+        TreeNode2 treNode2 = new TreeNode2(2);
+        TreeNode2 treNode3 = new TreeNode2(7);
+        TreeNode2 treNode4 = new TreeNode2(1);
+        TreeNode2 treNode5 = new TreeNode2(3);
+        TreeNode2 treNode6 = new TreeNode2(6);
+        TreeNode2 treNode7 = new TreeNode2(9);
 
-        treeNode1.left = treeNode2;
-        treeNode1.right = treeNode3;
+        treNode1.left = treNode2;
+        treNode1.right = treNode3;
 
-        treeNode2.left = treeNode4;
-        treeNode2.right = treeNode5;
+        treNode2.left = treNode4;
+        treNode2.right = treNode5;
 
-        treeNode3.left = treeNode6;
-        treeNode3.right = treeNode7;
+        treNode3.left = treNode6;
+        treNode3.right = treNode7;
 
     }
 }
