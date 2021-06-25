@@ -22,10 +22,24 @@ package offer;
 public class offer33 {
 
     public static boolean verifyPostorder(int[] postorder) {
-
-
-        return false;
+        return recur(postorder, 0, postorder.length - 1);
     }
+
+    public static boolean recur(int[] postorder, int i, int j) {
+        if(i >= j) {
+            return true;
+        }
+        int p = i;
+        while(postorder[p] < postorder[j]) {//找到第一个大于root的值
+            p++;
+        }
+        int m = p;
+        while(postorder[p] > postorder[j]) {//判断第一个大于root的值到root之间是否都是大于root的
+            p++;
+        }
+        return p == j && recur(postorder, i, m - 1) && recur(postorder, m, j - 1);
+    }
+
     public static void main(String[] args) {
         int[] arr1 = new int[]{1,6,3,2,5};
         int[] arr2 = new int[]{1,3,2,6,5};
