@@ -45,15 +45,15 @@ class TreeNode5 {
     }
 }
 public class offer34 {
-
-    public static List<List<Integer>> pathSum(TreeNode5 root, int target) {
-        if () {
-
-        }
-
-
-        pathSum()
-    }
+//
+//    public static List<List<Integer>> pathSum(TreeNode5 root, int target) {
+//        if () {
+//
+//        }
+//
+//
+//        pathSum()
+//    }
 
     public static void main(String[] args) {
         TreeNode5 node1 = new TreeNode5(5);
@@ -73,7 +73,7 @@ public class offer34 {
         node3.addLR(node5, node6);
         node6.addLR(node9, node10);
 
-        System.out.println(pathSum(node1, 22));
+        //System.out.println(pathSum(node1, 22));
 
     }
 }
