@@ -54,8 +54,8 @@ public class KnapsackProblem {
                     //为了记录商品存放到背包的情况，我们不能直接的使用上面的公式，需要使用if-else来体现公式
                     if(v[i - 1][j] < val[i - 1] + v[i - 1][j - w[i - 1]]) {
                         v[i][j] = val[i - 1] + v[i - 1][j - w[i - 1]];
-                        //把当前的情况记录到path
-                        path[i][j] = 1;
+                        //当新加物品的价值（原背包容量最大价值+新加的物品价值） > 原背包最大价值（新物品加不进去）把当前的情况记录到path
+                        path[i][j] = 1;  //意味着 背包容量为j时，加了i
                     } else {
                         v[i][j] = v[i - 1][j];
                     }
@@ -77,7 +77,7 @@ public class KnapsackProblem {
         while(i > 0 && j > 0 ) { //从path的最后开始找
             if(path[i][j] == 1) {
                 System.out.printf("第%d个商品放入到背包\n", i);
-                j -= w[i-1]; //  背包容量 - 物品重量
+                j -= w[i-1]; //  背包容量 - 当前这一行所代表的物品重量
             }
             i--;
         }
