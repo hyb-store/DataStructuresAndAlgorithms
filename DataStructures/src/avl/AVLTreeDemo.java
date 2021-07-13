@@ -188,7 +188,7 @@ class Node {
         Node newNode = new Node(value);
         //把新的结点的左子树设置成当前结点的左子树
         newNode.left = left;
-        //把新的结点的右子树设置成带你过去结点的右子树的左子树
+        //把新的结点的右子树设置成当前结点的右子树的左子树
         newNode.right = right.left;
         //把当前结点的值替换成右子结点的值
         value = right.value;
