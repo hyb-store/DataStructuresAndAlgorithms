@@ -139,7 +139,7 @@ public class HorseChessboard {
                 int count1 = next(o1).size();
                 //获取到o2的下一步的所有位置个数
                 int count2 = next(o2).size();
-                if(count1 < count2) {
+                if(count1 < count2) {  //如果返回的值小于零，则不交换两个o1和o2的位置
                     return -1;
                 } else if (count1 == count2) {
                     return 0;
