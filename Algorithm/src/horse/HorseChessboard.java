@@ -134,7 +134,6 @@ public class HorseChessboard {
 
             @Override
             public int compare(Point o1, Point o2) {
-                // TODO Auto-generated method stub
                 //获取到o1的下一步的所有位置个数
                 int count1 = next(o1).size();
                 //获取到o2的下一步的所有位置个数
