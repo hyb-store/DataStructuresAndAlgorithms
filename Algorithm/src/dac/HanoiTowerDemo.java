@@ -10,6 +10,12 @@ public class HanoiTowerDemo {
 
     }
 
+    /**
+     * @param n 盘子个数
+     * @param a 柱子
+     * @param b 柱子
+     * @param c 柱子
+     */
     public static void HanoiTower(int n, char a, char b, char c) {
         if (n == 1) {
             System.out.println("第"+1+"个盘子  "+""+a+"->"+c);

@@ -17,10 +17,9 @@ class offer03 {
             while(nums[i] != i) {
                 if(nums[i] == nums[nums[i]])
                     return nums[i];
-
-            temp = nums[i];
-            nums[i] = nums[temp];
-            nums[temp] = temp;
+                temp = nums[i];
+                nums[i] = nums[temp];
+                nums[temp] = temp;
             }
         }
         return -1;
